@@ -1,0 +1,71 @@
+﻿<!DOCTYPE HTML>
+<html>
+<head>
+  <title>Liste d'anime à regarder</title>
+  <link rel="stylesheet" href="decoration/application.css">
+  <style></style>
+  <script src="cordova.js"></script>
+  
+  <script src="modele/Anime.js"></script>
+  <script src="donnee/AnimeDAO.js"></script>
+  
+  <script src="vue/VueAnime.js"></script>
+  <script src="vue/VueAjouterAnime.js"></script>
+  <script src="vue/VueListeAnime.js"></script>
+  
+  <script defer src="Application.js"></script>
+
+</head>
+<body>
+  <div id="page-chargement-application">Chargement de l'application anime a regarder</div>
+
+  <script type="plain/text" id="html-vue-liste-anime">
+	<div class="page">
+		<h1>Liste d'anime a regarder</h1>
+		<a class="action" href="#ajouter-anime">Ajouter un anime</a>
+		<ul id="liste-anime">
+			<li><a href="#anime/{Anime.id}" class="liste-anime-item">{Anime.nom}</a></li>
+		</ul>
+	</div>
+  </script>
+  
+  <script type="plain/text" id="html-vue-ajouter-anime">
+  <div class="page">
+    <h1>Ajouter un anime</h1>
+    <form id="formulaire-ajouter">
+      <fieldset>
+        <legend>Identification du anime</legend>
+        <div>
+          <label for="anime-nom">Nom</label>
+          <input type="text" id="anime-nom"/>
+        </div>
+        <div>
+          <label for="anime-nbr-episodes">Nombre d'episodes</label>
+          <input type="text" id="anime-nbr-episodes"/>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Details sur le anime</legend>
+        <div>
+          <label for="anime-description">Description</label>
+          <textarea id="anime-description"></textarea>
+        </div>
+      </fieldset>
+      <input class="action" type="submit" id="enregistrer" value="Enregistrer"/>
+    </form>
+    <a href="#" class="action">Annuler et revenir a la liste</a>
+  </div>
+  </script>
+  
+  <script type="plain/text" id="html-vue-anime">
+  <div class="page">
+		<h1>Anime à regarder</h1>
+		<h2 id="anime-nom"></h2>
+		<p id="anime-nbr-episodes"></p>
+		<p id="anime-description"></p>
+		<a href="#" class="action">Revenir a la liste</a>
+  </div>
+  </script>
+  
+</body>
+</html>
