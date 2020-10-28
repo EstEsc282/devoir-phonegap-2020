@@ -19,7 +19,7 @@ class Application{
 
   initialiserNavigation(){
     console.log("Application-->initialiserNavigation");
-    this.window.addEventListener("hashchange", () =>naviguer());
+    this.window.addEventListener("hashchange", () =>this.naviguer());
     setTimeout(() =>this.naviguer(), 3000);
   }
 
